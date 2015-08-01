@@ -4,6 +4,6 @@ The Start.jar file is the executable JAR file. I have configured it to run from 
 
 
  - Open your Command Prompt / Mac Terminal
- - Type "java -jar Start.java"
+ - Type "java -jar Start.jar"
  
 That should be it.
