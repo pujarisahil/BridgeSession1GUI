@@ -27,7 +27,7 @@ public class Question3GUI extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24));
         jLabel1.setText("<html>Question 3 : You have a right triangle. The length<br>" + 
-        				"of one leg is 5 inches and the length of the other leg is 12<br>" +
+        				"of one leg is 5 inches and the length of the other<br>leg is 12 " +
         				"inches. What is the length of the hypotenuse?</html>");
 
         jRadioButton1.setFont(new java.awt.Font("Tahoma", 0, 24));
@@ -141,19 +141,19 @@ public class Question3GUI extends javax.swing.JFrame {
     }
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-        StartupScreen.pass = false;
+        Question1GUI.pass[2] = false;
     }
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-        StartupScreen.pass = false;
+        Question1GUI.pass[2] = false;
     }
 
     private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {
-        StartupScreen.pass = true;
+        Question1GUI.pass[2] = true;
     }
 
     private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {
-        StartupScreen.pass = false;
+        Question1GUI.pass[2] = false;
     }
 
     protected void jButton2ActionPerformed(ActionEvent evt) {

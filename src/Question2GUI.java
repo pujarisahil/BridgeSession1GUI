@@ -139,20 +139,20 @@ public class Question2GUI extends javax.swing.JFrame {
         pack();
     }
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-        StartupScreen.pass = false;
+    private void jRadioButton1ActionPerformed(ActionEvent evt) {
+        Question1GUI.pass[1] = false;
     }
 
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-        StartupScreen.pass = true;
+    private void jRadioButton2ActionPerformed(ActionEvent evt) {
+        Question1GUI.pass[1] = true;
     }
 
-    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {
-        StartupScreen.pass = false;
+    private void jRadioButton3ActionPerformed(ActionEvent evt) {
+        Question1GUI.pass[1] = false;
     }
 
-    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {
-        StartupScreen.pass = false;
+    private void jRadioButton4ActionPerformed(ActionEvent evt) {
+        Question1GUI.pass[1] = false;
     }
 
     protected void jButton2ActionPerformed(ActionEvent evt) {

@@ -36,19 +36,26 @@ public class EndFrame extends javax.swing.JFrame {
         jLabel3.setText("CS Bridge Course 2015");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18));
-        jLabel1.setText("TODO");
+        jLabel1.setText("Congratulations! You passed the quiz!");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18));
-        jLabel2.setText("Replace this with instruction 1");
+        jLabel2.setText("<html>After you click 'Finish' below, .zip folder and a .pdf file<br>"
+        				+ "	will be generated onto your Desktop.</html>");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18));
-        jLabel5.setText("Replace this with instruction 2");
+        jLabel5.setText("<html>The zip is password protected, and the pdf contains clues<br>"
+        				+ "for the password. Work with your team to solve the clues.<html>");
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18));
-        jLabel6.setText("Replace this with instruction 3");
+        jLabel6.setText("<html>There are four parts to each password. The passwords are<br>"
+        				+ "written in camel case, with the first letter of each part<br>"
+        				+ "capitalized, and no white space. The password will look something<br>"
+        				+ "like this: PartoneParttwoPartthreePartfour.</html>");
 
         jLabel8.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18));
-        jLabel8.setText("Replace this with instruction 4");
+        jLabel8.setText("<html>Some of the clues may require you to ask some of your TAs<br>"
+        				+ "for some information. Do what you must to unlock the zip, and<br>"
+        				+ "then follow the instructions inside to complete the activity.</html>");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

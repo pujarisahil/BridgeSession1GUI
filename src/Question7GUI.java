@@ -61,7 +61,7 @@ public class Question7GUI extends javax.swing.JFrame {
             }
         });
         
-        jRadioButton5.setFont(new java.awt.Font("Tahome", 0, 24));
+        jRadioButton5.setFont(new java.awt.Font("Tahoma", 0, 24));
         jRadioButton5.setText("Buster Dunsmore");
         jRadioButton5.addActionListener(new java.awt.event.ActionListener(){
         	public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,7 +109,8 @@ public class Question7GUI extends javax.swing.JFrame {
                             .addComponent(jRadioButton2)
                             .addComponent(jRadioButton1)
                             .addComponent(jRadioButton3)
-                            .addComponent(jRadioButton4)))
+                            .addComponent(jRadioButton4)
+                            .addComponent(jRadioButton5)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(153, 153, 153)
                         .addComponent(jLabel3))
@@ -137,6 +138,8 @@ public class Question7GUI extends javax.swing.JFrame {
                 .addComponent(jRadioButton3)
                 .addGap(18, 18, 18)
                 .addComponent(jRadioButton4)
+                .addGap(18, 18, 18)
+                .addComponent(jRadioButton5)
                 .addGap(52, 52, 52)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -148,23 +151,23 @@ public class Question7GUI extends javax.swing.JFrame {
     }
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-        StartupScreen.pass = false;
+        Question1GUI.pass[6] = false;
     }
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-        StartupScreen.pass = false;
+        Question1GUI.pass[6] = false;
     }
 
     private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {
-        StartupScreen.pass = false;
+        Question1GUI.pass[6] = false;
     }
 
     private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {
-        StartupScreen.pass = true;
+        Question1GUI.pass[6] = true;
     }
     
     private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {
-        StartupScreen.pass = false;
+        Question1GUI.pass[6] = false;
     }
 
     protected void jButton2ActionPerformed(ActionEvent evt) {

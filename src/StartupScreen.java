@@ -2,7 +2,6 @@
 public class StartupScreen extends javax.swing.JFrame {
 
     public StartupScreen() {
-    	pass = true;
         initComponents();
     }
 
@@ -103,5 +102,4 @@ public class StartupScreen extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JSeparator jSeparator1;
-    protected static boolean pass;
 }

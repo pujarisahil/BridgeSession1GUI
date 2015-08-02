@@ -26,10 +26,11 @@ public class Question10GUI extends javax.swing.JFrame {
         jLabel4.setText("Session 1");
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel1.setText("Question 10 : Replace this with the question");
+        jLabel1.setText("<html>Question 10 : It takes 10 lumberjacks 10 days to chop 10 trees.<br>" +
+        				"How many trees do two lumberjacks chop in two days?</html>");
 
         jRadioButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jRadioButton1.setText("Option 1 Text here");
+        jRadioButton1.setText("1/5 trees");
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton1ActionPerformed(evt);
@@ -37,7 +38,7 @@ public class Question10GUI extends javax.swing.JFrame {
         });
 
         jRadioButton2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jRadioButton2.setText("Option 2 Text here");
+        jRadioButton2.setText("2/5 trees");
         jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton2ActionPerformed(evt);
@@ -45,7 +46,7 @@ public class Question10GUI extends javax.swing.JFrame {
         });
 
         jRadioButton3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jRadioButton3.setText("Option 3 Text here");
+        jRadioButton3.setText("1 tree");
         jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton3ActionPerformed(evt);
@@ -53,7 +54,7 @@ public class Question10GUI extends javax.swing.JFrame {
         });
 
         jRadioButton4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jRadioButton4.setText("Option 4 Text here");
+        jRadioButton4.setText("2 trees");
         jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton4ActionPerformed(evt);
@@ -139,19 +140,19 @@ public class Question10GUI extends javax.swing.JFrame {
     }
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        Question1GUI.pass[9] = false;
     }
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        Question1GUI.pass[9] = true;
     }
 
     private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        Question1GUI.pass[9] = true;
     }
 
     private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        Question1GUI.pass[9] = false;
     }
 
     protected void jButton2ActionPerformed(ActionEvent evt) {
@@ -161,14 +162,18 @@ public class Question10GUI extends javax.swing.JFrame {
 		
 	}
 
-	protected void jButton1ActionPerformed(ActionEvent evt) {
-    	//TODO
-	       //CHECK IF ALL ANSWERS ARE CORRECT ONLY THEN GO TO ENDFRAME
-	       //ELSE GO TO FailFrame AND START THE PROGRAM AGAIN
-		String[] args = {};
+	protected void jButton1ActionPerformed(ActionEvent evt) {	
 		if (jRadioButton1.isSelected() || jRadioButton2.isSelected() || 
 				jRadioButton3.isSelected() || jRadioButton4.isSelected()) {
-			if (StartupScreen.pass)
+			String[] args = {};
+			boolean pass = true;
+			for (int i = 0; i < Question1GUI.pass.length; i++) {
+				if (!Question1GUI.pass[i]) {
+					pass = false;
+					break;
+				}
+			}
+			if (pass)
 				EndFrame.main(args);
 			else 
 				FailFrame.main(args);

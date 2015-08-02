@@ -5,6 +5,7 @@ import javax.swing.AbstractButton;
 public class Question1GUI extends javax.swing.JFrame {
 
     public Question1GUI() {
+    	pass = new boolean[10];
         initComponents();
     }
 
@@ -156,19 +157,19 @@ public class Question1GUI extends javax.swing.JFrame {
 	}
 
 	private void jRadioButton1ActionPerformed(ActionEvent evt) {
-        StartupScreen.pass = false;
+        pass[0] = false;
     }
 
     private void jRadioButton2ActionPerformed(ActionEvent evt) {
-        StartupScreen.pass = false;
+        pass[0] = false;
     }
 
     private void jRadioButton3ActionPerformed(ActionEvent evt) {
-        StartupScreen.pass = false;
+        pass[0] = false;
     }
 
     private void jRadioButton4ActionPerformed(ActionEvent evt) {
-        StartupScreen.pass = true;
+        pass[0] = true;
     }
     
 
@@ -191,4 +192,5 @@ public class Question1GUI extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JSeparator jSeparator1;
+    protected static boolean[] pass;
 }

@@ -30,7 +30,7 @@ public class Question6GUI extends javax.swing.JFrame {
         "hybrid would be able to perfectly mimic the pitch of your voice?</html>");
 
         jRadioButton1.setFont(new java.awt.Font("Tahoma", 0, 24));
-        jRadioButton1.setText("Jabberjay");
+        jRadioButton1.setText("Jabberjays");
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton1ActionPerformed(evt);
@@ -46,7 +46,7 @@ public class Question6GUI extends javax.swing.JFrame {
         });
 
         jRadioButton3.setFont(new java.awt.Font("Tahoma", 0, 24));
-        jRadioButton3.setText("Mockingjay");
+        jRadioButton3.setText("Mockingjays");
         jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton3ActionPerformed(evt);
@@ -140,19 +140,19 @@ public class Question6GUI extends javax.swing.JFrame {
     }
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-        StartupScreen.pass = false;
+        Question1GUI.pass[5] = false;
     }
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-        StartupScreen.pass = false;
+        Question1GUI.pass[5] = false;
     }
 
     private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {
-        StartupScreen.pass = true;
+        Question1GUI.pass[5] = true;
     }
 
     private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {
-        StartupScreen.pass = false;
+        Question1GUI.pass[5] = false;
     }
     
     protected void jButton2ActionPerformed(ActionEvent evt) {
