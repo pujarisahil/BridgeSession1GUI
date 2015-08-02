@@ -1,0 +1,13 @@
+Ask Brody for his favorite tv show.,Breakingbad
+Ask Brody for his favorite movie.,Stepbrothers
+Ask Brody for his favorite song.,Sundaycandy
+Ask Brody for his favorite book.,Plumisland
+Ask Brody for his favorite artist.,Kendricklamar
+Ask Rachel for her favorite tv show.,Thetwilightzone
+Ask Rachel for her favorite movie.,Lostintranslation
+Ask Rachel for her favorite book.,Thebookofdisquiet
+Ask Rachel for her favorite artist.,Themountaingoats
+Ask Varun for his favorite tv show.,Numb3rs
+Ask Varun for his favorite movie.,Abeautfiulmind
+Ask Varun for his favorite song.,Somebodythatiusedtoknow
+Ask Varun for his favorite book.,TuesdayswithMorrie

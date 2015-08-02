@@ -1,8 +1,8 @@
-import java.awt.event.ActionEvent;
-
 public class EndFrame extends javax.swing.JFrame {
 
     public EndFrame() {
+    	generator = new PasswordGenerator("session1-146hints.txt");
+    	generator.setPasswordAndHints();
         initComponents();
     }
 
@@ -122,12 +122,70 @@ public class EndFrame extends javax.swing.JFrame {
         });
     }
     
-    private void jButton2ActionPerformed(ActionEvent evt) {
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
 		//TODO generate files
+    	getHintsFile();
+    	getZipFile();
     	dispose();
 	}
 
-    private javax.swing.JButton jButton2;
+    private void getZipFile() {
+    	System.out.println(generator.hints + "\n" + generator.password);
+	}
+
+	private void getHintsFile() {
+		try {
+			org.apache.pdfbox.pdmodel.PDDocument hintsPDF =
+					(new org.apache.pdfbox.TextToPDF()).createPDFFromText(new java.io.StringReader(generator.hints));
+			hintsPDF.save("hints.pdf");
+			hintsPDF.close();
+		} catch (java.io.IOException e) {
+			System.out.println(e.getMessage());
+		} catch (org.apache.pdfbox.exceptions.COSVisitorException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	private class PasswordGenerator {
+		
+		java.util.ArrayList<String> hintsList;
+		String hints;
+		String password;
+		
+		public PasswordGenerator(String filename) {
+			hintsList = new java.util.ArrayList<String>();
+			hints = "";
+			password = "";
+			readHintsFile(filename);
+		}
+		
+		public void readHintsFile(String filename) {
+			try {
+				java.io.BufferedReader read = new java.io.BufferedReader(new java.io.FileReader(filename));
+				String line;
+				while((line = read.readLine()) != null) {
+					hintsList.add(line);
+				}
+			} catch (java.io.FileNotFoundException e) {
+				System.out.println(e.getMessage());
+			} catch (java.io.IOException e) {
+				System.out.println(e.getMessage());
+			}
+		}
+		
+		public void setPasswordAndHints() {
+			java.util.Random r = new java.util.Random();
+			for (int i = 0; i < 4; i++) {
+				int index = r.nextInt(hintsList.size());
+				String[] hint = hintsList.get(index).split(",");
+				hints += hint[0] + "\n";
+				password += hint[1];
+				hintsList.remove(index);
+			}
+		}
+	}
+
+	private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -136,4 +194,5 @@ public class EndFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JSeparator jSeparator1;
+    private PasswordGenerator generator;
 }

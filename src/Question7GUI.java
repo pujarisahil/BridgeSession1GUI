@@ -167,6 +167,15 @@ public class Question7GUI extends javax.swing.JFrame {
     }
     
     private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {
+    	if (jRadioButton2.isSelected())
+			jRadioButton2.doClick();
+		if (jRadioButton3.isSelected())
+			jRadioButton3.doClick();
+		if (jRadioButton4.isSelected())
+			jRadioButton4.doClick();
+		if (jRadioButton1.isSelected())
+			jRadioButton1.doClick();
+		
         Question1GUI.pass[6] = false;
     }
 

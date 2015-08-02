@@ -160,7 +160,7 @@ public class Question1GUI extends javax.swing.JFrame {
         pass[0] = false;
     }
 
-    private void jRadioButton2ActionPerformed(ActionEvent evt) {
+    private void jRadioButton2ActionPerformed(ActionEvent evt) {	
         pass[0] = false;
     }
 
@@ -169,7 +169,7 @@ public class Question1GUI extends javax.swing.JFrame {
     }
 
     private void jRadioButton4ActionPerformed(ActionEvent evt) {
-        pass[0] = true;
+    	pass[0] = true;
     }
     
 
