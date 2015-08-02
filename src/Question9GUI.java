@@ -30,7 +30,7 @@ public class Question9GUI extends javax.swing.JFrame {
         				"of the CS department at Purdue?</html>");
 
         jRadioButton1.setFont(new java.awt.Font("Tahoma", 0, 24));
-        jRadioButton1.setText("Option 1 Text here");
+        jRadioButton1.setText("CL50");
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton1ActionPerformed(evt);
@@ -38,7 +38,7 @@ public class Question9GUI extends javax.swing.JFrame {
         });
 
         jRadioButton2.setFont(new java.awt.Font("Tahoma", 0, 24));
-        jRadioButton2.setText("Option 2 Text here");
+        jRadioButton2.setText("HAAS");
         jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton2ActionPerformed(evt);
@@ -46,7 +46,7 @@ public class Question9GUI extends javax.swing.JFrame {
         });
 
         jRadioButton3.setFont(new java.awt.Font("Tahoma", 0, 24));
-        jRadioButton3.setText("Option 3 Text here");
+        jRadioButton3.setText("LWSN");
         jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton3ActionPerformed(evt);
@@ -54,7 +54,7 @@ public class Question9GUI extends javax.swing.JFrame {
         });
 
         jRadioButton4.setFont(new java.awt.Font("Tahoma", 0, 24));
-        jRadioButton4.setText("Option 4 Text here");
+        jRadioButton4.setText("KNOY");
         jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton4ActionPerformed(evt);
@@ -139,18 +139,18 @@ public class Question9GUI extends javax.swing.JFrame {
         pack();
     }
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        StartupScreen.pass = false;
     }
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        StartupScreen.pass = true;
     }
     private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        StartupScreen.pass = false;
     }
 
     private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        StartupScreen.pass = false;
     }
    
     protected void jButton2ActionPerformed(ActionEvent evt) {
