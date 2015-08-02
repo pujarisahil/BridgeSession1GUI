@@ -1,3 +1,5 @@
+import java.awt.event.ActionEvent;
+
 public class FailFrame extends javax.swing.JFrame {
 
     public FailFrame() {
@@ -20,12 +22,17 @@ public class FailFrame extends javax.swing.JFrame {
 
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 18));
         jButton2.setText("Start Over");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 36));
         jLabel3.setText("CS Bridge Course 2015");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18));
-        jLabel2.setText("Sorry you failed blah blah blah idk what to say. Replace this with whatever you feel right");
+        jLabel2.setText("Sorry, you did not pass the quiz. Click below to take the quiz again.");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -74,7 +81,15 @@ public class FailFrame extends javax.swing.JFrame {
                 new FailFrame().setVisible(true);
             }
         });
+        
     }
+    
+	private void jButton2ActionPerformed(ActionEvent evt) {
+		String[] args = {};
+		Question1GUI.main(args);
+		dispose();
+		
+	}
 
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel2;

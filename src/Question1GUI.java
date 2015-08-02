@@ -1,5 +1,7 @@
 import java.awt.event.ActionEvent;
 
+import javax.swing.AbstractButton;
+
 public class Question1GUI extends javax.swing.JFrame {
 
     public Question1GUI() {
@@ -26,10 +28,10 @@ public class Question1GUI extends javax.swing.JFrame {
         jLabel4.setText("Session 1");
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24));
-        jLabel1.setText("Question 1 : Replace this with the question");
+        jLabel1.setText("Question 1 : Which spell would protect you from dementors?");
 
         jRadioButton1.setFont(new java.awt.Font("Tahoma", 0, 24));
-        jRadioButton1.setText("Option 1 Text here");
+        jRadioButton1.setText("Alohomora");
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton1ActionPerformed(evt);
@@ -37,7 +39,7 @@ public class Question1GUI extends javax.swing.JFrame {
         });
 
         jRadioButton2.setFont(new java.awt.Font("Tahoma", 0, 24));
-        jRadioButton2.setText("Option 2 Text here");
+        jRadioButton2.setText("Expelliarmus");
         jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton2ActionPerformed(evt);
@@ -45,7 +47,7 @@ public class Question1GUI extends javax.swing.JFrame {
         });
 
         jRadioButton3.setFont(new java.awt.Font("Tahoma", 0, 24));
-        jRadioButton3.setText("Option 3 Text here");
+        jRadioButton3.setText("Imperio");
         jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton3ActionPerformed(evt);
@@ -53,21 +55,21 @@ public class Question1GUI extends javax.swing.JFrame {
         });
 
         jRadioButton4.setFont(new java.awt.Font("Tahoma", 0, 24));
-        jRadioButton4.setText("Option 4 Text here");
+        jRadioButton4.setText("Expecto Patronum");
         jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton4ActionPerformed(evt);
             }
         });
 
-        jButton1.setText("<< Previous");
+        jButton1.setText("Next >>");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Next >>");
+        jButton2.setText("<< PreviousNext >>");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -138,32 +140,35 @@ public class Question1GUI extends javax.swing.JFrame {
 
     protected void jButton2ActionPerformed(ActionEvent evt) {
     	String[] args = {};
-		Question2GUI.main(args);
+		StartupScreen.main(args);
 		dispose();
 		
 	}
 
 	protected void jButton1ActionPerformed(ActionEvent evt) {
 		String[] args = {};
-		StartupScreen.main(args);
-		dispose();
+		if (jRadioButton1.isSelected() || jRadioButton2.isSelected() || 
+				jRadioButton3.isSelected() || jRadioButton4.isSelected()) {
+			Question2GUI.main(args);
+			dispose();
+		}
 		
 	}
 
 	private void jRadioButton1ActionPerformed(ActionEvent evt) {
-        // TODO add your handling code here:
+        StartupScreen.pass = false;
     }
 
     private void jRadioButton2ActionPerformed(ActionEvent evt) {
-        // TODO add your handling code here:
+        StartupScreen.pass = false;
     }
 
     private void jRadioButton3ActionPerformed(ActionEvent evt) {
-        // TODO add your handling code here:
+        StartupScreen.pass = false;
     }
 
     private void jRadioButton4ActionPerformed(ActionEvent evt) {
-        // TODO add your handling code here:
+        StartupScreen.pass = true;
     }
     
 

@@ -26,10 +26,12 @@ public class Question3GUI extends javax.swing.JFrame {
         jLabel4.setText("Session 1");
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24));
-        jLabel1.setText("Question 3 : Replace this with the question");
+        jLabel1.setText("<html>Question 3 : You have a right triangle. The length<br>" + 
+        				"of one leg is 5 inches and the length of the other leg is 12<br>" +
+        				"inches. What is the length of the hypotenuse?</html>");
 
         jRadioButton1.setFont(new java.awt.Font("Tahoma", 0, 24));
-        jRadioButton1.setText("Option 1 Text here");
+        jRadioButton1.setText("8 inches");
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton1ActionPerformed(evt);
@@ -37,7 +39,7 @@ public class Question3GUI extends javax.swing.JFrame {
         });
 
         jRadioButton2.setFont(new java.awt.Font("Tahoma", 0, 24));
-        jRadioButton2.setText("Option 2 Text here");
+        jRadioButton2.setText("15 inches");
         jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton2ActionPerformed(evt);
@@ -45,7 +47,7 @@ public class Question3GUI extends javax.swing.JFrame {
         });
 
         jRadioButton3.setFont(new java.awt.Font("Tahoma", 0, 24));
-        jRadioButton3.setText("Option 3 Text here");
+        jRadioButton3.setText("13 inches");
         jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton3ActionPerformed(evt);
@@ -53,17 +55,17 @@ public class Question3GUI extends javax.swing.JFrame {
         });
 
         jRadioButton4.setFont(new java.awt.Font("Tahoma", 0, 24));
-        jRadioButton4.setText("Option 4 Text here");
+        jRadioButton4.setText("24 inches");
         jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton4ActionPerformed(evt);
             }
         });
 
-        jButton1.setText("<< Previous");
+        jButton1.setText("Next >>");
 
         
-        jButton2.setText("Next >>");
+        jButton2.setText("<< Previous");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -139,32 +141,35 @@ public class Question3GUI extends javax.swing.JFrame {
     }
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        StartupScreen.pass = false;
     }
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        StartupScreen.pass = false;
     }
 
     private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        StartupScreen.pass = true;
     }
 
     private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        StartupScreen.pass = false;
     }
 
     protected void jButton2ActionPerformed(ActionEvent evt) {
     	String[] args = {};
-		Question4GUI.main(args);
+		Question2GUI.main(args);
 		dispose();
 		
 	}
 
 	protected void jButton1ActionPerformed(ActionEvent evt) {
 		String[] args = {};
-		Question2GUI.main(args);
-		dispose();
+		if (jRadioButton1.isSelected() || jRadioButton2.isSelected() || 
+				jRadioButton3.isSelected() || jRadioButton4.isSelected()) {
+			Question4GUI.main(args);
+			dispose();
+		}
 		
 	}
 	

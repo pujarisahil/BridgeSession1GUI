@@ -60,9 +60,9 @@ public class Question10GUI extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("<< Previous");
+        jButton1.setText("Next >>");
 
-        jButton2.setText("Next >>");
+        jButton2.setText("<< Previous");
 
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -155,19 +155,25 @@ public class Question10GUI extends javax.swing.JFrame {
     }
 
     protected void jButton2ActionPerformed(ActionEvent evt) {
-    	//TODO
-    	       //CHECK IF ALL ANSWERS ARE CORRECT ONLY THEN GO TO ENDFRAME
-    	       //ELSE GO TO FailFrame AND START THE PROGRAM AGAIN
     	String[] args = {};
-		EndFrame.main(args);
+    	Question9GUI.main(args);
 		dispose();
 		
 	}
 
 	protected void jButton1ActionPerformed(ActionEvent evt) {
+    	//TODO
+	       //CHECK IF ALL ANSWERS ARE CORRECT ONLY THEN GO TO ENDFRAME
+	       //ELSE GO TO FailFrame AND START THE PROGRAM AGAIN
 		String[] args = {};
-		Question1GUI.main(args);
-		dispose();
+		if (jRadioButton1.isSelected() || jRadioButton2.isSelected() || 
+				jRadioButton3.isSelected() || jRadioButton4.isSelected()) {
+			if (StartupScreen.pass)
+				EndFrame.main(args);
+			else 
+				FailFrame.main(args);
+			dispose();
+		}
 		
 	}
 	

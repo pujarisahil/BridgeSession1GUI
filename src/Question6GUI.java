@@ -26,7 +26,8 @@ public class Question6GUI extends javax.swing.JFrame {
         jLabel4.setText("Session 1");
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24));
-        jLabel1.setText("Question 6 : Replace this with the question");
+        jLabel1.setText("<html>Question 6 : Suppose you live in Panem. Which genetic<br>" + 
+        "hybrid would be able to perfectly mimic the pitch of your voice?</html>");
 
         jRadioButton1.setFont(new java.awt.Font("Tahoma", 0, 24));
         jRadioButton1.setText("Option 1 Text here");
@@ -60,9 +61,9 @@ public class Question6GUI extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("<< Previous");
+        jButton1.setText("Next >>");
 
-        jButton2.setText("Next >>");
+        jButton2.setText("<< Previous");
 
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -156,15 +157,18 @@ public class Question6GUI extends javax.swing.JFrame {
     
     protected void jButton2ActionPerformed(ActionEvent evt) {
     	String[] args = {};
-		Question7GUI.main(args);
-		dispose();
+    	Question5GUI.main(args);
+    	dispose();
 		
 	}
 
 	protected void jButton1ActionPerformed(ActionEvent evt) {
 		String[] args = {};
-		Question5GUI.main(args);
-		dispose();
+		if (jRadioButton1.isSelected() || jRadioButton2.isSelected() || 
+				jRadioButton3.isSelected() || jRadioButton4.isSelected()) {
+			Question7GUI.main(args);
+			dispose();
+		}
 		
 	}
 

@@ -16,6 +16,7 @@ public class Question7GUI extends javax.swing.JFrame {
         jRadioButton2 = new javax.swing.JRadioButton();
         jRadioButton3 = new javax.swing.JRadioButton();
         jRadioButton4 = new javax.swing.JRadioButton();
+        jRadioButton5 = new javax.swing.JRadioButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
@@ -26,7 +27,7 @@ public class Question7GUI extends javax.swing.JFrame {
         jLabel4.setText("Session 1");
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24));
-        jLabel1.setText("Question 7 : Replace this with the question");
+        jLabel1.setText("Question 7 : Who is the head of the CS department at Purdue?");
 
         jRadioButton1.setFont(new java.awt.Font("Tahoma", 0, 24));
         jRadioButton1.setText("Option 1 Text here");
@@ -59,10 +60,18 @@ public class Question7GUI extends javax.swing.JFrame {
                 jRadioButton4ActionPerformed(evt);
             }
         });
+        
+        jRadioButton5.setFont(new java.awt.Font("Tahome", 0, 24));
+        jRadioButton5.setText("Option 5 text here");
+        jRadioButton5.addActionListener(new java.awt.event.ActionListener(){
+        	public void actionPerformed(java.awt.event.ActionEvent evt) {
+        		jRadioButton5ActionPerformed(evt);
+        	}
+        });
 
-        jButton1.setText("<< Previous");
+        jButton1.setText("Next >>");
 
-        jButton2.setText("Next >>");
+        jButton2.setText("<< Previous");
 
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -153,18 +162,25 @@ public class Question7GUI extends javax.swing.JFrame {
     private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
+    
+    private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {
+    	//TODO add handling
+    }
 
     protected void jButton2ActionPerformed(ActionEvent evt) {
     	String[] args = {};
-		Question8GUI.main(args);
-		dispose();
+    	Question6GUI.main(args);
+    	dispose();
 		
 	}
 
 	protected void jButton1ActionPerformed(ActionEvent evt) {
 		String[] args = {};
-		Question6GUI.main(args);
-		dispose();
+		if (jRadioButton1.isSelected() || jRadioButton2.isSelected() || 
+				jRadioButton3.isSelected() || jRadioButton4.isSelected()) {
+			Question8GUI.main(args);
+			dispose();
+		}
 		
 	}
 	
@@ -186,5 +202,6 @@ public class Question7GUI extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JRadioButton jRadioButton5;
     private javax.swing.JSeparator jSeparator1;
 }

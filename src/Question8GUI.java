@@ -60,9 +60,9 @@ public class Question8GUI extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("<< Previous");
+        jButton1.setText("Next >>");
 
-        jButton2.setText("Next >>");
+        jButton2.setText("<< Previous");
 
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -156,15 +156,18 @@ public class Question8GUI extends javax.swing.JFrame {
     
     protected void jButton2ActionPerformed(ActionEvent evt) {
     	String[] args = {};
-		Question9GUI.main(args);
+		Question7GUI.main(args);
 		dispose();
 		
 	}
 
 	protected void jButton1ActionPerformed(ActionEvent evt) {
 		String[] args = {};
-		Question7GUI.main(args);
-		dispose();
+		if (jRadioButton1.isSelected() || jRadioButton2.isSelected() || 
+				jRadioButton3.isSelected() || jRadioButton4.isSelected()) {
+			Question9GUI.main(args);
+			dispose();
+		}
 		
 	}
 

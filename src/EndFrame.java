@@ -1,3 +1,5 @@
+import java.awt.event.ActionEvent;
+
 public class EndFrame extends javax.swing.JFrame {
 
     public EndFrame() {
@@ -24,6 +26,11 @@ public class EndFrame extends javax.swing.JFrame {
 
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 18));
         jButton2.setText("Finish");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 36));
         jLabel3.setText("CS Bridge Course 2015");
@@ -107,6 +114,11 @@ public class EndFrame extends javax.swing.JFrame {
             }
         });
     }
+    
+    private void jButton2ActionPerformed(ActionEvent evt) {
+		//TODO generate files
+    	dispose();
+	}
 
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;

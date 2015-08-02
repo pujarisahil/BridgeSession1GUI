@@ -2,6 +2,7 @@
 public class StartupScreen extends javax.swing.JFrame {
 
     public StartupScreen() {
+    	pass = true;
         initComponents();
     }
 
@@ -28,8 +29,11 @@ public class StartupScreen extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24));
-        jLabel1.setText("Name goes here");
-
+        jLabel1.setText("<html>Welcome to the 2015 Bridge Program. During this session,<br>" +
+        				"we are going to complete a short activity with of group of no<br>" +
+        				"more than five people. You must first complete this quiz with<br>" + 
+        				"your group to unlock the next part of the activity.</html>");
+        
         jLabel2.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 36));
         jLabel2.setText("CS Bridge Course 2015");
 
@@ -99,4 +103,5 @@ public class StartupScreen extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JSeparator jSeparator1;
+    protected static boolean pass;
 }
