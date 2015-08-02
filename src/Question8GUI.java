@@ -26,10 +26,10 @@ public class Question8GUI extends javax.swing.JFrame {
         jLabel4.setText("Session 1");
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24));
-        jLabel1.setText("Question 8 : Replace this with the question");
+        jLabel1.setText("Question 8 : Some Pokemon question");
 
         jRadioButton1.setFont(new java.awt.Font("Tahoma", 0, 24));
-        jRadioButton1.setText("Option 1 Text here");
+        jRadioButton1.setText("This one is correct");
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton1ActionPerformed(evt);
@@ -139,19 +139,19 @@ public class Question8GUI extends javax.swing.JFrame {
     }
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        StartupScreen.pass = true;
     }
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        StartupScreen.pass = false;
     }
 
     private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        StartupScreen.pass = false;
     }
 
     private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        StartupScreen.pass = false;
     }
     
     protected void jButton2ActionPerformed(ActionEvent evt) {

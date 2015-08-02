@@ -26,7 +26,8 @@ public class Question9GUI extends javax.swing.JFrame {
         jLabel4.setText("Session 1");
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24));
-        jLabel1.setText("Question 9 : Replace this with the question");
+        jLabel1.setText("<html>Question 9 : Which building was the original location<br>" + 
+        				"of the CS department at Purdue?</html>");
 
         jRadioButton1.setFont(new java.awt.Font("Tahoma", 0, 24));
         jRadioButton1.setText("Option 1 Text here");
