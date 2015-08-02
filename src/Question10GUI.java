@@ -148,7 +148,7 @@ public class Question10GUI extends javax.swing.JFrame {
     }
 
     private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {
-        Question1GUI.pass[9] = true;
+        Question1GUI.pass[9] = false;
     }
 
     private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {

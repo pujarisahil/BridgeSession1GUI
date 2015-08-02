@@ -26,7 +26,7 @@ public class Question8GUI extends javax.swing.JFrame {
         jLabel4.setText("Session 1");
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24));
-        jLabel1.setText("Question 8 : In Pokemon, how many gyms are there?");
+        jLabel1.setText("Question 8 : In Pokemon, how many gyms per region are there?");
 
         jRadioButton1.setFont(new java.awt.Font("Tahoma", 0, 24));
         jRadioButton1.setText("6");

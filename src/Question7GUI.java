@@ -180,7 +180,8 @@ public class Question7GUI extends javax.swing.JFrame {
 	protected void jButton1ActionPerformed(ActionEvent evt) {
 		String[] args = {};
 		if (jRadioButton1.isSelected() || jRadioButton2.isSelected() || 
-				jRadioButton3.isSelected() || jRadioButton4.isSelected()) {
+				jRadioButton3.isSelected() || jRadioButton4.isSelected() ||
+				jRadioButton5.isSelected()) {
 			Question8GUI.main(args);
 			dispose();
 		}

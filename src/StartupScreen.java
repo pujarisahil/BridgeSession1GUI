@@ -29,9 +29,9 @@ public class StartupScreen extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24));
         jLabel1.setText("<html>Welcome to the 2015 Bridge Program. During this session,<br>" +
-        				"we are going to complete a short activity with of group of no<br>" +
-        				"more than five people. You must first complete this quiz with<br>" + 
-        				"your group to unlock the next part of the activity.</html>");
+        				"we are going to complete a short activity with a group of 5-6<br>" +
+        				"people. You must first complete this quiz with your group to<br>" + 
+        				"unlock the next part of the activity.</html>");
         
         jLabel2.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 36));
         jLabel2.setText("CS Bridge Course 2015");
