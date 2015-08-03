@@ -183,7 +183,7 @@ public class EndFrame extends javax.swing.JFrame {
 			java.util.zip.ZipOutputStream zipOut = new java.util.zip.ZipOutputStream(encryptOut);
 			
 			com.alutam.ziputils.ZipDecryptInputStream in = new com.alutam.ziputils.ZipDecryptInputStream(
-					new java.io.FileInputStream("bridge-session1-end.zip"), pdfPass);
+					new java.io.FileInputStream("Session01.zip"), pdfPass);
 			java.util.zip.ZipInputStream zis = new java.util.zip.ZipInputStream(in);
 			
 			java.util.zip.ZipEntry e = new java.util.zip.ZipEntry(zis.getNextEntry().getName());
@@ -194,6 +194,7 @@ public class EndFrame extends javax.swing.JFrame {
 				zipOut.write(b);
 			zipOut.closeEntry();
 			zipOut.close();
+			zis.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();;
 		} catch (IOException e) {
@@ -229,7 +230,7 @@ public class EndFrame extends javax.swing.JFrame {
 				String[] clues = str.toString().split("\n");
 				for (int i = 0; i < clues.length; i++)
 					hintsList.add(clues[i]);
-				str.close();
+				zis.close();
 			} catch (java.io.FileNotFoundException e) {
 				e.printStackTrace();;
 			} catch (java.io.IOException e) {
