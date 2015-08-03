@@ -176,7 +176,6 @@ public class EndFrame extends javax.swing.JFrame {
 	}
 
     private void getZipFile() {
-    	//TODO make the zip file work
     	try {
 			com.alutam.ziputils.ZipEncryptOutputStream encryptOut = 
 					new com.alutam.ziputils.ZipEncryptOutputStream(
