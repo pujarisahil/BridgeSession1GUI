@@ -1,3 +1,6 @@
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 public class EndFrame extends javax.swing.JFrame {
 
     public EndFrame() {
@@ -174,6 +177,24 @@ public class EndFrame extends javax.swing.JFrame {
 
     private void getZipFile() {
     	//TODO make the zip file work
+    	try {
+			com.alutam.ziputils.ZipEncryptOutputStream encryptOut = 
+					new com.alutam.ziputils.ZipEncryptOutputStream(
+							new java.io.FileOutputStream("UnlockThis.zip"), password);
+			java.util.zip.ZipOutputStream zipOut = new java.util.zip.ZipOutputStream(encryptOut);
+			java.util.zip.ZipEntry e = new java.util.zip.ZipEntry("bridge-session1-end.pdf");
+			zipOut.putNextEntry(e);
+			java.io.InputStream in = new java.io.FileInputStream("bridge-session1-end.pdf");
+			int b;
+			while ((b = in.read()) != -1)
+				zipOut.write(b);
+			zipOut.closeEntry();
+			zipOut.close();
+		} catch (FileNotFoundException e) {
+			System.out.println(e.getMessage());
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
+		}
     }
 
 	private void getHintsFile() {
