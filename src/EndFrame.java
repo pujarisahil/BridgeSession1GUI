@@ -1,8 +1,9 @@
 public class EndFrame extends javax.swing.JFrame {
 
     public EndFrame() {
-    	generator = new PasswordGenerator("session1-146hints.txt");
-    	generator.setPasswordAndHints();
+    	hintsList = new java.util.ArrayList<String>();
+    	hints = "";
+    	password = "";
         initComponents();
     }
 
@@ -11,7 +12,9 @@ public class EndFrame extends javax.swing.JFrame {
 
         jLabel4 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -24,11 +27,27 @@ public class EndFrame extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 24));
         jLabel4.setText("Session 1");
 
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 18));
+        jButton3.setText("B146");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 18));
-        jButton2.setText("Finish");
+        jButton2.setText("B148");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
+            }
+        });
+        
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 18));
+        jButton1.setText("B158");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -39,8 +58,8 @@ public class EndFrame extends javax.swing.JFrame {
         jLabel1.setText("Congratulations! You passed the quiz!");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18));
-        jLabel2.setText("<html>After you click 'Finish' below, .zip folder and a .pdf file<br>"
-        				+ "	will be generated onto your Desktop.</html>");
+        jLabel2.setText("<html>After you click your lab section below, .zip folder and a<br> "
+        				+ ".pdf file will be generated into your working directory.</html>");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18));
         jLabel5.setText("<html>The zip is password protected, and the pdf contains clues<br>"
@@ -63,9 +82,13 @@ public class EndFrame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(301, 301, 301))
+            		.addGap(0, 0, Short.MAX_VALUE)
+            		.addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(48, 48, 48)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(48, 48, 48)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(251, 251, 251))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -106,7 +129,10 @@ public class EndFrame extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel8)
                 .addGap(116, 116, 116)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+	                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(45, 45, 45))
         );
 
@@ -122,21 +148,38 @@ public class EndFrame extends javax.swing.JFrame {
         });
     }
     
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+    	readCluesFile("session1-158hints.txt");
+    	setPasswordAndHints();
+    	getHintsFile();
+    	getZipFile();
+    	dispose();
+	}
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-		//TODO generate files
+    	readCluesFile("session1-148hints.txt");
+    	setPasswordAndHints();
+    	getHintsFile();
+    	getZipFile();
+    	dispose();
+	}
+    
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
+    	readCluesFile("session1-146hints.txt");
+    	setPasswordAndHints();
     	getHintsFile();
     	getZipFile();
     	dispose();
 	}
 
     private void getZipFile() {
-    	System.out.println(generator.hints + "\n" + generator.password);
-	}
+    	//TODO make the zip file work
+    }
 
 	private void getHintsFile() {
 		try {
 			org.apache.pdfbox.pdmodel.PDDocument hintsPDF =
-					(new org.apache.pdfbox.TextToPDF()).createPDFFromText(new java.io.StringReader(generator.hints));
+					(new org.apache.pdfbox.TextToPDF()).createPDFFromText(new java.io.StringReader(hints));
 			hintsPDF.save("hints.pdf");
 			hintsPDF.close();
 		} catch (java.io.IOException e) {
@@ -145,27 +188,15 @@ public class EndFrame extends javax.swing.JFrame {
 			System.out.println(e.getMessage());
 		}
 	}
-	
-	private class PasswordGenerator {
 		
-		java.util.ArrayList<String> hintsList;
-		String hints;
-		String password;
-		
-		public PasswordGenerator(String filename) {
-			hintsList = new java.util.ArrayList<String>();
-			hints = "";
-			password = "";
-			readHintsFile(filename);
-		}
-		
-		public void readHintsFile(String filename) {
+		public void readCluesFile(String filename) {
 			try {
 				java.io.BufferedReader read = new java.io.BufferedReader(new java.io.FileReader(filename));
 				String line;
 				while((line = read.readLine()) != null) {
 					hintsList.add(line);
 				}
+				read.close();
 			} catch (java.io.FileNotFoundException e) {
 				System.out.println(e.getMessage());
 			} catch (java.io.IOException e) {
@@ -175,17 +206,19 @@ public class EndFrame extends javax.swing.JFrame {
 		
 		public void setPasswordAndHints() {
 			java.util.Random r = new java.util.Random();
+			String[] hint;
 			for (int i = 0; i < 4; i++) {
 				int index = r.nextInt(hintsList.size());
-				String[] hint = hintsList.get(index).split(",");
+				hint = hintsList.get(index).split(",");
 				hints += hint[0] + "\n";
 				password += hint[1];
 				hintsList.remove(index);
 			}
 		}
-	}
 
+	private javax.swing.JButton jButton1;
 	private javax.swing.JButton jButton2;
+	private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -194,5 +227,7 @@ public class EndFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JSeparator jSeparator1;
-    private PasswordGenerator generator;
+    private java.util.ArrayList<String> hintsList;
+	private String hints;
+	private String password;
 }

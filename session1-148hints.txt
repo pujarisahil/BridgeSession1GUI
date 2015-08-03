@@ -1,0 +1,9 @@
+Ask Pranav for his favorite movie.,Whiplash
+Ask Pranav for his favorite song.,Idoitforyou
+Ask Pranav for his favorite book.,Ulysses
+Ask Pranav for his favorite artist.,Bryanadams
+Ask Tori for her favorite tv show.,Sherlock
+Ask Tori for her favorite movie.,Thewords
+Ask Tori for her favorite song.,Polaroid
+Ask Tori for her favorite book.,Fahrenheit451
+Ask Tori for her favorite artist.,Imaginedragons
