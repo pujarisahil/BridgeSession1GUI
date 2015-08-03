@@ -185,7 +185,6 @@ public class EndFrame extends javax.swing.JFrame {
 			java.util.zip.ZipInputStream zis = new java.util.zip.ZipInputStream(in);
 			java.util.zip.ZipEntry e = new java.util.zip.ZipEntry(zis.getNextEntry().getName());
 			zipOut.putNextEntry(e);
-			//java.io.InputStream in = new java.io.FileInputStream("bridge-session1-end.pdf");
 			int b;
 			while ((b = zis.read()) != -1)
 				zipOut.write(b);
