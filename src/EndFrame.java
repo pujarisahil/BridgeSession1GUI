@@ -158,7 +158,7 @@ public class EndFrame extends javax.swing.JFrame {
     	getZipFile();
     	dispose();
 	}
-    
+   //
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
     	readCluesFile("hints2.zip", hints2Pass);
     	setPasswordAndHints();
