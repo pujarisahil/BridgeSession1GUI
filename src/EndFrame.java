@@ -58,7 +58,7 @@ public class EndFrame extends javax.swing.JFrame {
         jLabel1.setText("Congratulations! You passed the quiz!");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18));
-        jLabel2.setText("<html>After you click your lab section below, .zip folder and a<br> "
+        jLabel2.setText("<html>After you click your lab section below, .zip file and a<br> "
         				+ ".pdf file will be generated into your working directory.</html>");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18));

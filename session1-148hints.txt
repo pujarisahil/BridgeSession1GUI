@@ -7,3 +7,11 @@ Ask Tori for her favorite movie.,Thewords
 Ask Tori for her favorite song.,Polaroid
 Ask Tori for her favorite book.,Fahrenheit451
 Ask Tori for her favorite artist.,Imaginedragons
+Who you gonna call?,Ghostbusters
+I've a feeling we're not in Kansas anymore.,Thewizardofoz
+Life is like box of this.,Chocolates
+May the odds be ever in your favor.,Thehungergames
+Four houses separate the students at this school.,Hogwarts
+This goes up when rain comes down.,Umbrella
+This word becomes shorter when you add two letters to it.,Short
+Life, liberty and the pursuit of...,Happiness
