@@ -158,7 +158,7 @@ public class EndFrame extends javax.swing.JFrame {
     	getZipFile();
     	dispose();
 	}
-   //
+   
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
     	readCluesFile("hints2.zip", hints2Pass);
     	setPasswordAndHints();
@@ -181,11 +181,13 @@ public class EndFrame extends javax.swing.JFrame {
 					new com.alutam.ziputils.ZipEncryptOutputStream(
 							new java.io.FileOutputStream("UnlockThis.zip"), password);
 			java.util.zip.ZipOutputStream zipOut = new java.util.zip.ZipOutputStream(encryptOut);
-			java.util.zip.ZipEntry e = new java.util.zip.ZipEntry("bridge-session1-end.pdf");
+			com.alutam.ziputils.ZipDecryptInputStream in = new com.alutam.ziputils.ZipDecryptInputStream(new java.io.FileInputStream("bridge-session1-end.zip"), pdfPass);
+			java.util.zip.ZipInputStream zis = new java.util.zip.ZipInputStream(in);
+			java.util.zip.ZipEntry e = new java.util.zip.ZipEntry(zis.getNextEntry().getName());
 			zipOut.putNextEntry(e);
-			java.io.InputStream in = new java.io.FileInputStream("bridge-session1-end.pdf");
+			//java.io.InputStream in = new java.io.FileInputStream("bridge-session1-end.pdf");
 			int b;
-			while ((b = in.read()) != -1)
+			while ((b = zis.read()) != -1)
 				zipOut.write(b);
 			zipOut.closeEntry();
 			zipOut.close();
