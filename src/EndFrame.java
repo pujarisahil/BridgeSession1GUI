@@ -152,7 +152,7 @@ public class EndFrame extends javax.swing.JFrame {
     }
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-    	readCluesFile("session1-158hints.txt");
+    	readCluesFile("hints3.zip", hints3Pass);
     	setPasswordAndHints();
     	getHintsFile();
     	getZipFile();
@@ -160,7 +160,7 @@ public class EndFrame extends javax.swing.JFrame {
 	}
     
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-    	readCluesFile("session1-148hints.txt");
+    	readCluesFile("hints2.zip", hints2Pass);
     	setPasswordAndHints();
     	getHintsFile();
     	getZipFile();
@@ -168,7 +168,7 @@ public class EndFrame extends javax.swing.JFrame {
 	}
     
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
-    	readCluesFile("session1-146hints.txt");
+    	readCluesFile("hints1.zip", hints1Pass);
     	setPasswordAndHints();
     	getHintsFile();
     	getZipFile();
@@ -190,9 +190,9 @@ public class EndFrame extends javax.swing.JFrame {
 			zipOut.closeEntry();
 			zipOut.close();
 		} catch (FileNotFoundException e) {
-			System.out.println(e.getMessage());
+			e.printStackTrace();;
 		} catch (IOException e) {
-			System.out.println(e.getMessage());
+			e.printStackTrace();;
 		}
     }
 
@@ -209,22 +209,30 @@ public class EndFrame extends javax.swing.JFrame {
 		}
 	}
 		
-		public void readCluesFile(String filename) {
+		private void readCluesFile(String filename, String filePassword) {
 			try {
-				java.io.BufferedReader read = new java.io.BufferedReader(new java.io.FileReader(filename));
-				String line;
-				while((line = read.readLine()) != null) {
-					hintsList.add(line);
+				com.alutam.ziputils.ZipDecryptInputStream in = new com.alutam.ziputils.ZipDecryptInputStream(new java.io.FileInputStream(filename), filePassword);
+				java.util.zip.ZipInputStream zis = new java.util.zip.ZipInputStream(in);
+				java.util.zip.ZipEntry e = zis.getNextEntry();
+				java.io.StringWriter str = new java.io.StringWriter();
+				int b;
+				while((b = zis.read()) != -1) {
+					str.write(b);
+					str.flush();
 				}
-				read.close();
+					
+				String[] clues = str.toString().split("\n");
+				for (int i = 0; i < clues.length; i++)
+					hintsList.add(clues[i]);
+				str.close();
 			} catch (java.io.FileNotFoundException e) {
-				System.out.println(e.getMessage());
+				e.printStackTrace();;
 			} catch (java.io.IOException e) {
-				System.out.println(e.getMessage());
+				e.printStackTrace();;
 			}
 		}
 		
-		public void setPasswordAndHints() {
+		private void setPasswordAndHints() {
 			java.util.Random r = new java.util.Random();
 			String[] hint;
 			for (int i = 0; i < 4; i++) {
@@ -250,4 +258,8 @@ public class EndFrame extends javax.swing.JFrame {
     private java.util.ArrayList<String> hintsList;
 	private String hints;
 	private String password;
+	private String hints1Pass = "bnwh!d2$4lw";
+	private String hints2Pass = "nttnt3$dt";
+	private String hints3Pass = "p0c$m0gj#m";
+	private String pdfPass = "s!@n$t1sim@tn";
 }
