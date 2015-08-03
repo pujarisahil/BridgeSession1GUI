@@ -61,8 +61,8 @@ public class EndFrame extends javax.swing.JFrame {
         jLabel1.setText("Congratulations! You passed the quiz!");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18));
-        jLabel2.setText("<html>After you click your lab section below, .zip file and a<br> "
-        				+ ".pdf file will be generated into your working directory.</html>");
+        jLabel2.setText("<html>After you click your lab section below, an 'UnlockThis.zip' file<br> "
+        				+ "and a 'hints.pdf' file will be generated into your working directory.</html>");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18));
         jLabel5.setText("<html>The zip is password protected, and the pdf contains clues<br>"
@@ -181,10 +181,14 @@ public class EndFrame extends javax.swing.JFrame {
 					new com.alutam.ziputils.ZipEncryptOutputStream(
 							new java.io.FileOutputStream("UnlockThis.zip"), password);
 			java.util.zip.ZipOutputStream zipOut = new java.util.zip.ZipOutputStream(encryptOut);
-			com.alutam.ziputils.ZipDecryptInputStream in = new com.alutam.ziputils.ZipDecryptInputStream(new java.io.FileInputStream("bridge-session1-end.zip"), pdfPass);
+			
+			com.alutam.ziputils.ZipDecryptInputStream in = new com.alutam.ziputils.ZipDecryptInputStream(
+					new java.io.FileInputStream("bridge-session1-end.zip"), pdfPass);
 			java.util.zip.ZipInputStream zis = new java.util.zip.ZipInputStream(in);
+			
 			java.util.zip.ZipEntry e = new java.util.zip.ZipEntry(zis.getNextEntry().getName());
 			zipOut.putNextEntry(e);
+			
 			int b;
 			while ((b = zis.read()) != -1)
 				zipOut.write(b);
