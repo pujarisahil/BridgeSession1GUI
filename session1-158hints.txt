@@ -2,7 +2,7 @@ Ask Jiapei for his favorite tv show.,Thebigbanghheory
 Ask Jiapei for his favorite movie.,Threeidiots
 Ask Jiapei for his favorite song.,Lovestory
 Ask Jiapei for his favorite book.,Harrypotter
-Ask Jiapei for his favorite artist.,Thebackstreetboys
+Ask Jiapei for his favorite artist.,Backstreetboys
 Ask Matt for his favorite tv show.,Theoffice
 Ask Matt for his favorite movie.,500daysofsummer
 Ask Matt for his favorite song.,Deadleavesandthedirtyground
