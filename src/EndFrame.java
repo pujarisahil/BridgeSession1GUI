@@ -1,6 +1,19 @@
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+/**
+ * <h1>Bridge Session 01 - GUI Quiz Program</h1>
+ *
+ * The end frame that generates the ZIP file along with the hints PDF.
+ *
+ * @author Victoria Shurman <vshurman@cs.purdue.edu>
+ * @author Sahil Pujari <pujari@cs.purdue.edu>
+ *
+ * @date August 2, 2015
+ *
+ */
+
+
 public class EndFrame extends javax.swing.JFrame {
 
     public EndFrame() {

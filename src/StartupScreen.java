@@ -1,10 +1,28 @@
+/**
+ * <h1>Bridge Session 01 - GUI Quiz Program</h1>
+ *
+ * The startup screen that displays the instructions
+ *
+ * @author Victoria Shurman <vshurman@cs.purdue.edu>
+ * @author Sahil Pujari <pujari@cs.purdue.edu>
+ *
+ * @date August 2, 2015
+ *
+ */
 
 public class StartupScreen extends javax.swing.JFrame {
 
+	/**
+	 * Constructor that takes care of initializing the components when an object of the class is created.
+	 */
     public StartupScreen() {
         initComponents();
     }
 
+    /**
+     * Method that initializes the components required by the GUI
+     * @return void
+     */
     @SuppressWarnings("unchecked")
     private void initComponents() {
 
@@ -15,11 +33,13 @@ public class StartupScreen extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
 
+        //Following code takes care of setting the title
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 24));
         jLabel3.setText("CS Bridge Course 2015");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        //Following code takes care of setting the JButton and impementing a listener
         jButton1.setText("Start");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -27,6 +47,7 @@ public class StartupScreen extends javax.swing.JFrame {
             }
         });
 
+        //Following code displays the startup message
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24));
         jLabel1.setText("<html>Welcome to the 2015 Bridge Program. During this session,<br>" +
         				"we are going to complete a short activity with a group of 5-6<br>" +
@@ -39,6 +60,7 @@ public class StartupScreen extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 24));
         jLabel4.setText("Session 1");
 
+        //Following code takes care of the alignment of the GUI so that components are placed at the appropriate positions
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -80,15 +102,18 @@ public class StartupScreen extends javax.swing.JFrame {
         pack();
     }
 
+    /**
+     * Specifies the actions to be invoked when jButton1 is pressed
+     * @param evt
+     * @return void
+     */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
     	String[] args = {};
     	Question1GUI.main(args);
     	dispose();
     }
 
     public static void main(String args[]) {
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new StartupScreen().setVisible(true);
@@ -96,6 +121,7 @@ public class StartupScreen extends javax.swing.JFrame {
         });
     }
 
+    /* Components required by the class are declared below */
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

@@ -2,13 +2,32 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractButton;
 
+/**
+ * <h1>Bridge Session 01 - GUI Quiz Program</h1>
+ *
+ * Displays the first question.
+ *
+ * @author Victoria Shurman <vshurman@cs.purdue.edu>
+ * @author Sahil Pujari <pujari@cs.purdue.edu>
+ *
+ * @date August 2, 2015
+ *
+ */
+
 public class Question1GUI extends javax.swing.JFrame {
 
+	/**
+	 * Constructor that takes care of initializing the components when an object of the class is created.
+	 */
     public Question1GUI() {
     	pass = new boolean[10];
         initComponents();
     }
 
+    /**
+     * Method that initializes the components required by the GUI
+     * @return void
+     */
     @SuppressWarnings("unchecked")
     private void initComponents() {
 

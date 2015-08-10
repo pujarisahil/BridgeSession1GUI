@@ -1,5 +1,17 @@
 import java.awt.event.ActionEvent;
 
+/**
+ * <h1>Bridge Session 01 - GUI Quiz Program</h1>
+ *
+ * Displays the eighth question.
+ *
+ * @author Victoria Shurman <vshurman@cs.purdue.edu>
+ * @author Sahil Pujari <pujari@cs.purdue.edu>
+ *
+ * @date August 2, 2015
+ *
+ */
+
 public class Question8GUI extends javax.swing.JFrame {
 
     public Question8GUI() {
