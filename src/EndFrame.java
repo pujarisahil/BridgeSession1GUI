@@ -366,10 +366,8 @@ public class EndFrame extends javax.swing.JFrame {
 			zis.close();
 		} catch (java.io.FileNotFoundException e) {
 			e.printStackTrace();
-			;
 		} catch (java.io.IOException e) {
 			e.printStackTrace();
-			;
 		}
 	}
 

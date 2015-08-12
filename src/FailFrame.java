@@ -14,10 +14,17 @@ import java.awt.event.ActionEvent;
 
 public class FailFrame extends javax.swing.JFrame {
 
+	/**
+	 * Constructor for a FailFrame. Calls {@link #initComponents()} to
+	 * initialize the Frame.
+	 */
 	public FailFrame() {
 		initComponents();
 	}
 
+	/**
+	 * Initializes the components required by the GUI.
+	 */
 	@SuppressWarnings("unchecked")
 	private void initComponents() {
 
@@ -118,8 +125,11 @@ public class FailFrame extends javax.swing.JFrame {
 		pack();
 	}
 
+	/**
+	 * Create and display the form
+	 * @param args
+	 */
 	public static void main(String args[]) {
-		/* Create and display the form */
 		java.awt.EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				new FailFrame().setVisible(true);
@@ -128,6 +138,11 @@ public class FailFrame extends javax.swing.JFrame {
 
 	}
 
+	/**
+	 * Specifies actions to take if jButton2 is pressed.
+	 * 
+	 * @param evt The event to evaluate
+	 */
 	private void jButton2ActionPerformed(ActionEvent evt) {
 		String[] args = {};
 		Question1GUI.main(args);
@@ -135,6 +150,7 @@ public class FailFrame extends javax.swing.JFrame {
 
 	}
 
+	/* Components required by the class are declared below */
 	private javax.swing.JButton jButton2;
 	private javax.swing.JLabel jLabel2;
 	private javax.swing.JLabel jLabel3;
