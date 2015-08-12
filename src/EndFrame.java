@@ -1,5 +1,4 @@
-import java.io.FileNotFoundException;
-import java.io.IOException;
+
 
 /**
  * <h1>Bridge Session 01 - GUI Quiz Program</h1>
@@ -16,6 +15,10 @@ import java.io.IOException;
 
 public class EndFrame extends javax.swing.JFrame {
 
+	/**
+	 * Constructor for an EndFrame. Initializes the hints array and the
+	 * components of the Frame.
+	 */
     public EndFrame() {
     	hintsList = new java.util.ArrayList<String>();
     	hints = "";
@@ -23,6 +26,9 @@ public class EndFrame extends javax.swing.JFrame {
         initComponents();
     }
 
+    /**
+     * Initializes the components of the JFrame and calls to action listeners.
+     */
     @SuppressWarnings("unchecked")
     private void initComponents() {
 
@@ -155,15 +161,27 @@ public class EndFrame extends javax.swing.JFrame {
         pack();
     }
 
+    /**
+     * Creates and displays the form.
+     * @param args
+     */
     public static void main(String args[]) {
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new EndFrame().setVisible(true);
             }
         });
     }
-    
+
+	/**
+	 * Action listener for jButton1, associated with lab section B148. Calls
+	 * {@link #readCluesFile(String, String)} to read the appropriate clues,
+	 * {@link #setPasswordAndHints()} to randomly generate the hints and
+	 * password, {@link #getHintsFile()} to generate hints.pdf, and
+	 * {@link #getZipFile()} to generate UnlockThis.zip.
+	 * 
+	 * @param evt
+	 */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
     	readCluesFile("hints3.zip", hints3Pass);
     	setPasswordAndHints();
@@ -172,6 +190,15 @@ public class EndFrame extends javax.swing.JFrame {
     	dispose();
 	}
    
+	/**
+	 * Action listener for jButton1, associated with lab section B148. Calls
+	 * {@link #readCluesFile(String, String)} to read the appropriate clues,
+	 * {@link #setPasswordAndHints()} to randomly generate the hints and
+	 * password, {@link #getHintsFile()} to generate hints.pdf, and
+	 * {@link #getZipFile()} to generate UnlockThis.zip.
+	 * 
+	 * @param evt
+	 */
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
     	readCluesFile("hints2.zip", hints2Pass);
     	setPasswordAndHints();
@@ -179,7 +206,16 @@ public class EndFrame extends javax.swing.JFrame {
     	getZipFile();
     	dispose();
 	}
-    
+
+	/**
+	 * Action listener for jButton1, associated with lab section B148. Calls
+	 * {@link #readCluesFile(String, String)} to read the appropriate clues,
+	 * {@link #setPasswordAndHints()} to randomly generate the hints and
+	 * password, {@link #getHintsFile()} to generate hints.pdf, and
+	 * {@link #getZipFile()} to generate UnlockThis.zip.
+	 * 
+	 * @param evt
+	 */
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
     	readCluesFile("hints1.zip", hints1Pass);
     	setPasswordAndHints();
@@ -188,6 +224,12 @@ public class EndFrame extends javax.swing.JFrame {
     	dispose();
 	}
 
+	/**
+	 * Reads a file from a password protected zip file and writes to a different
+	 * password protected zip file, encrypted with the randomly assigned
+	 * password and named UnlockThis.zip. The file is then outpur to the current
+	 * working directory.
+	 */
     private void getZipFile() {
     	try {
 			com.alutam.ziputils.ZipEncryptOutputStream encryptOut = 
@@ -208,17 +250,22 @@ public class EndFrame extends javax.swing.JFrame {
 			zipOut.closeEntry();
 			zipOut.close();
 			zis.close();
-		} catch (FileNotFoundException e) {
+		} catch (java.io.FileNotFoundException e) {
 			e.printStackTrace();;
-		} catch (IOException e) {
+		} catch (java.io.IOException e) {
 			e.printStackTrace();;
 		}
     }
 
+	/**
+	 * Writes the randomly assigned list of hints to a pdf file and outputs the
+	 * file, named hints.pdf, to the current working directory.
+	 */
 	private void getHintsFile() {
 		try {
 			org.apache.pdfbox.pdmodel.PDDocument hintsPDF =
-					(new org.apache.pdfbox.TextToPDF()).createPDFFromText(new java.io.StringReader(hints));
+					(new org.apache.pdfbox.TextToPDF()).createPDFFromText(
+							new java.io.StringReader(hints));
 			hintsPDF.save("hints.pdf");
 			hintsPDF.close();
 		} catch (java.io.IOException e) {
@@ -228,40 +275,59 @@ public class EndFrame extends javax.swing.JFrame {
 		}
 	}
 		
-		private void readCluesFile(String filename, String filePassword) {
-			try {
-				com.alutam.ziputils.ZipDecryptInputStream in = new com.alutam.ziputils.ZipDecryptInputStream(new java.io.FileInputStream(filename), filePassword);
-				java.util.zip.ZipInputStream zis = new java.util.zip.ZipInputStream(in);
-				java.util.zip.ZipEntry e = zis.getNextEntry();
-				java.io.StringWriter str = new java.io.StringWriter();
-				int b;
-				while((b = zis.read()) != -1) {
-					str.write(b);
-					str.flush();
-				}
-					
-				String[] clues = str.toString().split("\n");
-				for (int i = 0; i < clues.length; i++)
-					hintsList.add(clues[i]);
-				zis.close();
-			} catch (java.io.FileNotFoundException e) {
-				e.printStackTrace();;
-			} catch (java.io.IOException e) {
-				e.printStackTrace();;
+	/**
+	 * Reads a list of clues from a password protected clue file and adds each
+	 * line to an ArrayList.
+	 * 
+	 * @param filename
+	 *            The name of the file to read from
+	 * @param filePassword
+	 *            The password to decrypt the file
+	 */
+	private void readCluesFile(String filename, String filePassword) {
+		try {
+			com.alutam.ziputils.ZipDecryptInputStream in = new com.alutam.ziputils.ZipDecryptInputStream(
+					new java.io.FileInputStream(filename), filePassword);
+			java.util.zip.ZipInputStream zis = new java.util.zip.ZipInputStream(
+					in);
+			java.util.zip.ZipEntry e = zis.getNextEntry();
+			java.io.StringWriter str = new java.io.StringWriter();
+			int b;
+			while ((b = zis.read()) != -1) {
+				str.write(b);
+				str.flush();
 			}
+
+			String[] clues = str.toString().split("\n");
+			for (int i = 0; i < clues.length; i++)
+				hintsList.add(clues[i]);
+			zis.close();
+		} catch (java.io.FileNotFoundException e) {
+			e.printStackTrace();
+			;
+		} catch (java.io.IOException e) {
+			e.printStackTrace();
+			;
 		}
-		
-		private void setPasswordAndHints() {
-			java.util.Random r = new java.util.Random();
-			String[] hint;
-			for (int i = 0; i < 4; i++) {
-				int index = r.nextInt(hintsList.size());
-				hint = hintsList.get(index).split(",");
-				hints += hint[0] + "\n";
-				password += hint[1];
-				hintsList.remove(index);
-			}
+	}
+
+	/**
+	 * Randomly selects four random clues and their associated hints from the
+	 * hintsList, parses them, and assigns them to <code>hints</code> and
+	 * <code>password</code>. The clues are removed from the hintsList once they
+	 * are used to prevent repeats.
+	 */
+	private void setPasswordAndHints() {
+		java.util.Random r = new java.util.Random();
+		String[] hint;
+		for (int i = 0; i < 4; i++) {
+			int index = r.nextInt(hintsList.size());
+			hint = hintsList.get(index).split(",");
+			hints += hint[0] + "\n";
+			password += hint[1];
+			hintsList.remove(index);
 		}
+	}
 
 	private javax.swing.JButton jButton1;
 	private javax.swing.JButton jButton2;
